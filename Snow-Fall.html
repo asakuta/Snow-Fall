@@ -1,0 +1,179 @@
+<html style="overflow: hidden">
+<head>
+<script type="text/javascript">
+var snowx=[];
+var snowy=[];
+var angle=[];
+var originalangle=[];
+var message2="none"
+function movesnow(id)
+{
+   var snow=document.getElementById("snow"+id);
+   snow.style.left=snowx[id]+"px";
+   snow.style.top=snowy[id]+"px";
+   snow.style.transform="rotate("+angle[id]+"deg)";
+}
+function releasesnow()
+{
+   for(var i=0; i<46; i=i+1)
+   {
+      snowx[i]=Math.floor(Math.random()*(window.innerWidth-30)/10)*10;
+      snowy[i]=-(Math.random()*500);
+      angle[i]=(Math.random()*14)+2;
+      originalangle[i]=angle[i]
+   }
+}
+function refreshposition()
+{
+   for(var i=0; i<20; i=i+1)
+   {
+      snowy[i]=snowy[i]+2;
+   }
+   for(var i=20; i<36; i=i+1)
+   {
+      snowy[i]=snowy[i]+2.5;
+   }
+   for(var i=36; i<39; i=i+1)
+   {
+      snowy[i]=snowy[i]+3;
+   }
+   for(var i=39; i<42; i=i+1)
+   {
+      snowy[i]=snowy[i]+3.5;
+   }
+   for(var i=42; i<44; i=i+1)
+   {
+      snowy[i]=snowy[i]+4;
+   }
+   for(var i=44; i<46; i=i+1)
+   {
+      snowy[i]=snowy[i]+4.5;
+   }
+   for(var i=0; i<46; i=i+1)
+   {
+      angle[i]=angle[i]+originalangle[i];
+      if(snowy[i]>window.innerHeight)
+      {
+         snowx[i]=Math.floor(Math.random()*(window.innerWidth-30)/10)*10;
+         snowy[i]=-35;
+         angle[i]=(Math.random()*14)+2;
+         originalangle[i]=angle[i];
+      }
+    movesnow(i);
+   }
+   document.getElementById("message2").style.display=message2;
+   setTimeout(refreshposition, 60);
+}
+function poke(id)
+{
+    document.getElementById("message1").style.display="none";
+    message2="block";
+    originalangle[id]=-(originalangle[id]*2);
+}
+</script>
+</head>
+<body bgcolor="000027" onload="releasesnow(); refreshposition()">
+   <img onclick="poke(0)" src="snow1.png" id="snow0" height="5" width="5"
+       style="position: absolute; z-index: 0">
+   <img onclick="poke(1)" src="snow1.png" id="snow1" height="5" width="5"
+       style="position: absolute; z-index: 1">
+   <img onclick="poke(2)" src="snow1.png" id="snow2" height="5" width="5" 
+       style="position: absolute; z-index: 2">
+   <img onclick="poke(3)" src="snow1.png" id="snow3" height="5" width="5"
+       style="position: absolute; z-index: 3">
+   <img onclick="poke(4)" src="snow1.png" id="snow4" height="5" width="5"
+       style="position: absolute; z-index: 4">
+   <img onclick="poke(5)" src="snow1.png" id="snow5" height="5" width="5"
+       style="position: absolute; z-index: 5">
+   <img onclick="poke(6)" src="snow1.png" id="snow6" height="5" width="5"
+       style="position: absolute; z-index: 6">
+   <img onclick="poke(7)" src="snow1.png" id="snow7" height="5" width="5"
+       style="position: absolute; z-index: 7">
+   <img onclick="poke(8)" src="snow1.png" id="snow8" height="5" width="5"
+       style="position: absolute; z-index: 8">
+   <img onclick="poke(9)" src="snow1.png" id="snow9" height="5" width="5"
+       style="position: absolute; z-index: 9">
+   <img onclick="poke(10)" src="snow1.png" id="snow10" height="5" width="5"
+       style="position: absolute; z-index: 10">
+   <img onclick="poke(11)" src="snow1.png" id="snow11" height="5" width="5"
+       style="position: absolute; z-index: 11">
+   <img onclick="poke(12)" src="snow1.png" id="snow12" height="5" width="5"
+       style="position: absolute; z-index: 12">
+   <img onclick="poke(13)" src="snow1.png" id="snow13" height="5" width="5"
+       style="position: absolute; z-index: 13">
+   <img onclick="poke(14)" src="snow1.png" id="snow14" height="5" width="5"
+       style="position: absolute; z-index: 14">
+   <img onclick="poke(15)" src="snow1.png" id="snow15" height="5" width="5"
+       style="position: absolute; z-index: 15">
+   <img onclick="poke(16)" src="snow1.png" id="snow16" height="5" width="5"
+       style="position: absolute; z-index: 16">
+   <img onclick="poke(17)" src="snow1.png" id="snow17" height="5" width="5"
+       style="position: absolute; z-index: 17">
+   <img onclick="poke(18)" src="snow1.png" id="snow18" height="5" width="5"
+       style="position: absolute; z-index: 18">
+   <img onclick="poke(19)" src="snow1.png" id="snow19" height="5" width="5"
+       style="position: absolute; z-index: 19">
+   <img onclick="poke(20)" src="snow1.png" id="snow20" height="10" width="10"
+       style="position: absolute; z-index: 20">
+   <img onclick="poke(21)" src="snow1.png" id="snow21" height="10" width="10"
+       style="position: absolute; z-index: 21">
+   <img onclick="poke(22)" src="snow1.png" id="snow22" height="10" width="10"
+       style="position: absolute; z-index: 22">
+   <img onclick="poke(23)" src="snow1.png" id="snow23" height="10" width="10"
+       style="position: absolute; z-index: 23">
+   <img onclick="poke(24)" src="snow1.png" id="snow24" height="10" width="10"
+       style="position: absolute; z-index: 24">
+   <img onclick="poke(25)" src="snow1.png" id="snow25" height="10" width="10"
+       style="position: absolute; z-index: 25">
+   <img onclick="poke(26)" src="snow1.png" id="snow26" height="10" width="10"
+       style="position: absolute; z-index: 26">
+   <img onclick="poke(27)" src="snow1.png" id="snow27" height="10" width="10"
+       style="position: absolute; z-index: 27">
+   <img onclick="poke(28)" src="snow1.png" id="snow28" height="10" width="10"
+       style="position: absolute; z-index: 28">
+   <img onclick="poke(29)" src="snow1.png" id="snow29" height="10" width="10"
+       style="position: absolute; z-index: 29">
+   <img onclick="poke(30)" src="snow1.png" id="snow30" height="10" width="10"
+       style="position: absolute; z-index: 30">
+   <img onclick="poke(31)" src="snow1.png" id="snow31" height="10" width="10"
+       style="position: absolute; z-index: 31">
+   <img onclick="poke(32)" src="snow1.png" id="snow32" height="10" width="10"
+       style="position: absolute; z-index: 32">
+   <img onclick="poke(33)" src="snow1.png" id="snow33" height="10" width="10"
+       style="position: absolute; z-index: 33">
+   <img onclick="poke(34)" src="snow1.png" id="snow34" height="10" width="10"
+       style="position: absolute; z-index: 34">
+   <img onclick="poke(35)" src="snow1.png" id="snow35" height="10" width="10"
+       style="position: absolute; z-index: 35">
+   <img onclick="poke(36)" src="snow1.png" id="snow36" height="15" width="15"
+       style="position: absolute; z-index: 36">
+   <img onclick="poke(37)" src="snow1.png" id="snow37" height="15" width="15"
+       style="position: absolute; z-index: 37">
+   <img onclick="poke(38)" src="snow1.png" id="snow38" height="15" width="15"
+       style="position: absolute; z-index: 38">
+   <img onclick="poke(39)" src="snow1.png" id="snow39" height="20" width="20"
+       style="position: absolute; z-index: 39">
+   <img onclick="poke(40)" src="snow1.png" id="snow40" height="20" width="20"
+       style="position: absolute; z-index: 40">
+   <img onclick="poke(41)" src="snow1.png" id="snow41" height="20" width="20"
+       style="position: absolute; z-index: 41">
+   <img onclick="poke(42)" src="snow1.png" id="snow42" height="25" width="25"
+       style="position: absolute; z-index: 42">
+   <img onclick="poke(43)" src="snow1.png" id="snow43" height="25" width="25"
+       style="position: absolute; z-index: 43">
+   <img onclick="poke(44)" src="snow1.png" id="snow44" height="30" width="30"
+       style="position: absolute; z-index: 44">
+   <img onclick="poke(45)" src="snow1.png" id="snow45" height="30" width="30"
+       style="position: absolute; z-index: 45">
+   <div id="message1" style="position: absolute; bottom: 30px; right: 50px; z-index: 46">
+        <font color="white" size="3.5">
+            Try clicking on the snow...
+        </font>
+   </div>
+   <div id="message2" style="position: absolute; bottom: 30px; right: 50px; z-index: 46">
+        <font color="white" size="3.5">
+            Happy Snow Day :)
+        </font>
+   </div>
+</body>
+</html>
